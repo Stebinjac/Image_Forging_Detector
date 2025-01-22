@@ -3,6 +3,12 @@ import cv2
 import hashlib
 import os
 import numpy as np
+import json
+
+with open('vercel.json', 'r') as file:
+    data = json.load(file)
+    print("Valid JSON!")
+
 
 # Initialize Flask app
 app = Flask(__name__)
