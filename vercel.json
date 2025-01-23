@@ -1,11 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "builds": [
     {
       "src": "app.py",
       "use": "@vercel/python"
     }
   ],
+=======
+>>>>>>> f63958c2b6cb86d922fc486c1732d25183c404c5
   "routes": [
     {
       "src": "/(.*)",
