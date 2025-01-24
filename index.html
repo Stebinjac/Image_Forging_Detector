@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stebin's Image Investigation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="magnifying-glass">🔍</span> Stebin's Image Investigation</h1>
+        </header>
+
+        <section class="form-section">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <label for="original">🕵️ Upload Original Image:</label>
+                <input type="file" name="original" id="original" required>
+                
+                <label for="modified">🕵️ Upload Modified Image:</label>
+                <input type="file" name="modified" id="modified" required>
+                
+                <button type="submit">Investigate</button>
+            </form>
+        </section>
+
+        {% if result %}
+        <section class="result-section">
+            <div class="result-card">
+                <p class="result-text">{{ result }}</p>
+                {% if show_image %}
+                <div class="difference-image">
+                    <h2>🕵️‍♂️ Difference Image:</h2>
+                    <img src="{{ output_image }}" alt="Difference Image">
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        {% endif %}
+
+        <footer>
+            <p>&copy; {{ year }} Stebin's Investigation Lab</p>
+        </footer>
+    </div>
+</body>
+</html>
